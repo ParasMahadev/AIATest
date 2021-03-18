@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310EA6762603BDA30083A833 /* IntradayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA6742603BDA30083A833 /* IntradayTableViewCell.swift */; };
+		310EA6772603BDA30083A833 /* IntradayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310EA6752603BDA30083A833 /* IntradayTableViewCell.xib */; };
+		310EA67C2603BFDC0083A833 /* IntradayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA67B2603BFDC0083A833 /* IntradayData.swift */; };
+		310EA6812603D4F70083A833 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA6802603D4F70083A833 /* String+Extensions.swift */; };
+		310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA6852603D50A0083A833 /* Date+Extension.swift */; };
 		31A1A7B42603A4F40068FDAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B32603A4F40068FDAF /* AppDelegate.swift */; };
 		31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B52603A4F40068FDAF /* SceneDelegate.swift */; };
 		31A1A7B82603A4F40068FDAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B72603A4F40068FDAF /* ViewController.swift */; };
@@ -16,6 +21,7 @@
 		31A1A7CB2603A4F60068FDAF /* AIATestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7CA2603A4F60068FDAF /* AIATestTests.swift */; };
 		31A1A7D62603A4F60068FDAF /* AIATestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7D52603A4F60068FDAF /* AIATestUITests.swift */; };
 		31A1A7EC2603A8A50068FDAF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7EB2603A8A50068FDAF /* NetworkService.swift */; };
+		31A1A7F42603B7870068FDAF /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		310EA6742603BDA30083A833 /* IntradayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayTableViewCell.swift; sourceTree = "<group>"; };
+		310EA6752603BDA30083A833 /* IntradayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntradayTableViewCell.xib; sourceTree = "<group>"; };
+		310EA67B2603BFDC0083A833 /* IntradayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayData.swift; sourceTree = "<group>"; };
+		310EA6802603D4F70083A833 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		310EA6852603D50A0083A833 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		31A1A7B02603A4F40068FDAF /* AIATest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIATest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A1A7B32603A4F40068FDAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A1A7B52603A4F40068FDAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		31A1A7D52603A4F60068FDAF /* AIATestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIATestUITests.swift; sourceTree = "<group>"; };
 		31A1A7D72603A4F60068FDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31A1A7EB2603A8A50068FDAF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310EA6732603BD630083A833 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				310EA6742603BDA30083A833 /* IntradayTableViewCell.swift */,
+				310EA6752603BDA30083A833 /* IntradayTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		31A1A7A72603A4F40068FDAF = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +158,7 @@
 		31A1A7E62603A8250068FDAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				310EA67B2603BFDC0083A833 /* IntradayData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +166,7 @@
 		31A1A7E72603A8310068FDAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +174,7 @@
 		31A1A7E82603A8460068FDAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				310EA6732603BD630083A833 /* Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				31A1A7EB2603A8A50068FDAF /* NetworkService.swift */,
+				310EA6802603D4F70083A833 /* String+Extensions.swift */,
+				310EA6852603D50A0083A833 /* Date+Extension.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -275,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A1A7C02603A4F60068FDAF /* LaunchScreen.storyboard in Resources */,
+				310EA6772603BDA30083A833 /* IntradayTableViewCell.xib in Resources */,
 				31A1A7BD2603A4F60068FDAF /* Assets.xcassets in Resources */,
 				31A1A7BB2603A4F40068FDAF /* Main.storyboard in Resources */,
 			);
@@ -303,8 +330,13 @@
 			files = (
 				31A1A7B82603A4F40068FDAF /* ViewController.swift in Sources */,
 				31A1A7B42603A4F40068FDAF /* AppDelegate.swift in Sources */,
+				31A1A7F42603B7870068FDAF /* SymbolViewModel.swift in Sources */,
 				31A1A7EC2603A8A50068FDAF /* NetworkService.swift in Sources */,
+				310EA6812603D4F70083A833 /* String+Extensions.swift in Sources */,
+				310EA67C2603BFDC0083A833 /* IntradayData.swift in Sources */,
 				31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */,
+				310EA6762603BDA30083A833 /* IntradayTableViewCell.swift in Sources */,
+				310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

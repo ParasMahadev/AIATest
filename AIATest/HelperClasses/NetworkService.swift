@@ -16,20 +16,29 @@ enum TimeIntervals: String {
 }
 
 enum NetworkFunctions: String {
-    case timeSeriesIntradat = "TIME_SERIES_INTRADAY"
+    case timeSeriesIntraday = "TIME_SERIES_INTRADAY"
     case symbolSearch = "SYMBOL_SEARCH"
     case timeSeriesDailyAdjusted = "TIME_SERIES_DAILY_ADJUSTED"
 }
 
 class NetworkService{
     
-    var baseURL = "https://www.alphavantage.co"
+    static let shared = NetworkService()
     
-    var path = "/query"
+    private let baseURL = "https://www.alphavantage.co"
     
-    var apiKey = "LC0HKG8WYC7FPSYY"
+    private let path = "/query"
     
+    private let apiKey = "LC0HKG8WYC7FPSYY"
     
+    func getURL(function: NetworkFunctions, parameter: [String: Any]) -> URL?{
+        var urlString = baseURL + path + "?" + "function=\(function.rawValue)&"
+        for (key,value) in parameter {
+            urlString = urlString + "\(key)=\(value)&"
+        }
+       
+        return URL(string: urlString + "apikey=\(self.apiKey)")
+    }
     /**
     Use this generic function to load data form given URL
 
@@ -37,7 +46,7 @@ class NetworkService{
                 result: Based on response it pass the result
     - Returns: nil
     */
-    func getIntradayData(with func: NetworkFunctions, timeInterval: TimeIntervals,  result: @escaping () -> Void){
+    func getData<T: NSDictionary>(with url: URL, result: @escaping (Result<T, Error>) -> Void){
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 result(.failure(error))
@@ -48,11 +57,13 @@ class NetworkService{
                 result(.failure(error))
                 return
             }
-            guard let channelResponseModel = try? JSONDecoder().decode(T.self, from:data) else {
-                result(.failure(error!))
-                return
+            do{
+                if let jsonDic = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
+                    result(.success(jsonDic as! T))
+                }
+            }catch{
+                result(.failure(error))
             }
-            result(.success(channelResponseModel))
         }.resume()
     }
     

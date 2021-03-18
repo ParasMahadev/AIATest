@@ -19,17 +19,10 @@ class IntradayTableViewCell: UITableViewCell {
     var indexPath: IndexPath?
     var details: IntradayData?{
         didSet{
-            if indexPath?.row == 0{
-                dateAndTimeLabel.text = "Date and Time"
-                highLabel.text = "High"
-                lowLabel.text = "Low"
-                openLabel.text = "Open"
-            }else{
-                dateAndTimeLabel.text = details?.date
-                highLabel.text = details?.the2High
-                lowLabel.text = details?.the3Low
-                openLabel.text = details?.the1Open
-            }
+            dateAndTimeLabel.text = details?.date
+            highLabel.text = details?.the2High
+            lowLabel.text = details?.the3Low
+            openLabel.text = details?.the1Open
         }
     }
 

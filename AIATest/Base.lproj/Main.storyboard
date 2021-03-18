@@ -18,13 +18,13 @@
                         <viewLayoutGuide key="safeArea" id="xoK-OG-tWG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="line.3.crossed.swirl.circle.fill" catalog="system" id="kzM-dc-OL4"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="gearshape" catalog="system" id="kzM-dc-OL4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n11-dd-Dlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="867" y="676"/>
         </scene>
-        <!--Item 2-->
+        <!--Compare-->
         <scene sceneID="kcP-QX-2f7">
             <objects>
                 <viewController id="5sP-8b-mLQ" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="ld2-N1-mM8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="arrow.left.arrow.right" catalog="system" id="8V7-rh-eNL"/>
+                    <tabBarItem key="tabBarItem" title="Compare" image="arrow.left.arrow.right" catalog="system" id="8V7-rh-eNL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goq-u1-fV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +88,7 @@
                             <constraint firstItem="e81-mO-P7i" firstAttribute="bottom" secondItem="4a8-Qx-jRh" secondAttribute="bottom" id="xRV-ve-wax"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="bBe-q3-GYR"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="bBe-q3-GYR"/>
                     <connections>
                         <outlet property="symbolTextField" destination="dLm-jD-WvM" id="vMo-zb-bQj"/>
                         <outlet property="tableView" destination="4a8-Qx-jRh" id="oqs-tZ-455"/>
@@ -120,8 +120,8 @@
     </scenes>
     <resources>
         <image name="arrow.left.arrow.right" catalog="system" width="119" height="128"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="line.3.crossed.swirl.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -29,23 +29,24 @@ class NetworkService{
     
     private let path = "/query"
     
-    private let apiKey = "LC0HKG8WYC7FPSYY"
+    private let apiKey = "LC0HKG8WYC7FPSY"
     
     func getURL(function: NetworkFunctions, parameter: [String: Any]) -> URL?{
         var urlString = baseURL + path + "?" + "function=\(function.rawValue)&"
         for (key,value) in parameter {
             urlString = urlString + "\(key)=\(value)&"
         }
-       
+        
         return URL(string: urlString + "apikey=\(self.apiKey)")
     }
+    
     /**
-    Use this generic function to load data form given URL
-
-    - Parameter url: Webservices URL
-                result: Based on response it pass the result
-    - Returns: nil
-    */
+     Use this generic function to load data form given URL
+     
+     - Parameter url: Webservices URL
+     result: Based on response it pass the result
+     - Returns: nil
+     */
     func getData<T: NSDictionary>(with url: URL, result: @escaping (Result<T, Error>) -> Void){
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {

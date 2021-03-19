@@ -14,6 +14,13 @@
 		310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA6852603D50A0083A833 /* Date+Extension.swift */; };
 		310EA68C2603D81E0083A833 /* IntradayHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA68A2603D81E0083A833 /* IntradayHeaderTableViewCell.swift */; };
 		310EA68D2603D81E0083A833 /* IntradayHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */; };
+		316F3A4A260500D600043BB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A48260500D600043BB4 /* SearchViewController.swift */; };
+		316F3A53260504CE00043BB4 /* SymbolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A52260504CE00043BB4 /* SymbolData.swift */; };
+		316F3A582605071400043BB4 /* SearchSymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */; };
+		316F3A6126050E7000043BB4 /* SearchSymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A5F26050E7000043BB4 /* SearchSymbolTableViewCell.swift */; };
+		316F3A6226050E7000043BB4 /* SearchSymbolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 316F3A6026050E7000043BB4 /* SearchSymbolTableViewCell.xib */; };
+		316F3A672605146400043BB4 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A662605146400043BB4 /* ViewController+Extension.swift */; };
+		316F3A6D260515DC00043BB4 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A6C260515DC00043BB4 /* NoDataView.swift */; };
 		31A1A7B42603A4F40068FDAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B32603A4F40068FDAF /* AppDelegate.swift */; };
 		31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B52603A4F40068FDAF /* SceneDelegate.swift */; };
 		31A1A7B82603A4F40068FDAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A1A7B72603A4F40068FDAF /* ViewController.swift */; };
@@ -51,6 +58,13 @@
 		310EA6852603D50A0083A833 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		310EA68A2603D81E0083A833 /* IntradayHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntradayHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		316F3A48260500D600043BB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		316F3A52260504CE00043BB4 /* SymbolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolData.swift; sourceTree = "<group>"; };
+		316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSymbolViewModel.swift; sourceTree = "<group>"; };
+		316F3A5F26050E7000043BB4 /* SearchSymbolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSymbolTableViewCell.swift; sourceTree = "<group>"; };
+		316F3A6026050E7000043BB4 /* SearchSymbolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSymbolTableViewCell.xib; sourceTree = "<group>"; };
+		316F3A662605146400043BB4 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		316F3A6C260515DC00043BB4 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		31A1A7B02603A4F40068FDAF /* AIATest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIATest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A1A7B32603A4F40068FDAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A1A7B52603A4F40068FDAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +115,18 @@
 				310EA6752603BDA30083A833 /* IntradayTableViewCell.xib */,
 				310EA68A2603D81E0083A833 /* IntradayHeaderTableViewCell.swift */,
 				310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */,
+				316F3A5F26050E7000043BB4 /* SearchSymbolTableViewCell.swift */,
+				316F3A6026050E7000043BB4 /* SearchSymbolTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		316F3A6B260515B500043BB4 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				316F3A6C260515DC00043BB4 /* NoDataView.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 		31A1A7A72603A4F40068FDAF = {
@@ -165,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				310EA67B2603BFDC0083A833 /* IntradayData.swift */,
+				316F3A52260504CE00043BB4 /* SymbolData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */,
+				316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,9 +214,11 @@
 		31A1A7E92603A84F0068FDAF /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				316F3A6B260515B500043BB4 /* CommonViews */,
 				31A1A7EB2603A8A50068FDAF /* NetworkService.swift */,
 				310EA6802603D4F70083A833 /* String+Extensions.swift */,
 				310EA6852603D50A0083A833 /* Date+Extension.swift */,
+				316F3A662605146400043BB4 /* ViewController+Extension.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -199,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				31A1A7B72603A4F40068FDAF /* ViewController.swift */,
+				316F3A48260500D600043BB4 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -307,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A1A7C02603A4F60068FDAF /* LaunchScreen.storyboard in Resources */,
+				316F3A6226050E7000043BB4 /* SearchSymbolTableViewCell.xib in Resources */,
 				310EA68D2603D81E0083A833 /* IntradayHeaderTableViewCell.xib in Resources */,
 				310EA6772603BDA30083A833 /* IntradayTableViewCell.xib in Resources */,
 				31A1A7BD2603A4F60068FDAF /* Assets.xcassets in Resources */,
@@ -336,13 +366,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A1A7B82603A4F40068FDAF /* ViewController.swift in Sources */,
+				316F3A4A260500D600043BB4 /* SearchViewController.swift in Sources */,
 				31A1A7B42603A4F40068FDAF /* AppDelegate.swift in Sources */,
+				316F3A53260504CE00043BB4 /* SymbolData.swift in Sources */,
 				31A1A7F42603B7870068FDAF /* SymbolViewModel.swift in Sources */,
+				316F3A6126050E7000043BB4 /* SearchSymbolTableViewCell.swift in Sources */,
 				31A1A7EC2603A8A50068FDAF /* NetworkService.swift in Sources */,
 				310EA6812603D4F70083A833 /* String+Extensions.swift in Sources */,
+				316F3A672605146400043BB4 /* ViewController+Extension.swift in Sources */,
+				316F3A582605071400043BB4 /* SearchSymbolViewModel.swift in Sources */,
 				310EA67C2603BFDC0083A833 /* IntradayData.swift in Sources */,
 				31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */,
 				310EA6762603BDA30083A833 /* IntradayTableViewCell.swift in Sources */,
+				316F3A6D260515DC00043BB4 /* NoDataView.swift in Sources */,
 				310EA68C2603D81E0083A833 /* IntradayHeaderTableViewCell.swift in Sources */,
 				310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */,
 			);

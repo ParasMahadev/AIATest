@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -98,6 +99,66 @@
             </objects>
             <point key="canvasLocation" x="-1003" y="676"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="3Y7-cR-rnW">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="UuN-ZM-0Wx" customClass="SearchViewController" customModule="AIATest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GY8-GC-dKS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVt-gh-Xnu">
+                                <rect key="frame" x="0.0" y="109" width="414" height="787"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UuN-ZM-0Wx" id="4xb-OL-sSt"/>
+                                    <outlet property="delegate" destination="UuN-ZM-0Wx" id="MlV-R2-BKn"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-y0-NKA">
+                                <rect key="frame" x="15" y="59" width="384" height="35"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search symbol (eg. AIA)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrr-Rj-ZR7">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voI-DI-28Y">
+                                        <rect key="frame" x="359" y="0.0" width="25" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="f66-Is-Xk1"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <imageReference key="image" image="arrow.down.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissButtonPressed:" destination="UuN-ZM-0Wx" eventType="touchUpInside" id="t3y-4Q-D6N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jij-uh-945"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HVt-gh-Xnu" secondAttribute="bottom" id="77g-pC-ej7"/>
+                            <constraint firstItem="HVt-gh-Xnu" firstAttribute="top" secondItem="iRu-y0-NKA" secondAttribute="bottom" constant="15" id="FGJ-z5-zjR"/>
+                            <constraint firstItem="iRu-y0-NKA" firstAttribute="leading" secondItem="Jij-uh-945" secondAttribute="leading" constant="15" id="Iz5-Bk-2Es"/>
+                            <constraint firstItem="Jij-uh-945" firstAttribute="trailing" secondItem="iRu-y0-NKA" secondAttribute="trailing" constant="15" id="Ui4-zk-ZFM"/>
+                            <constraint firstItem="HVt-gh-Xnu" firstAttribute="leading" secondItem="Jij-uh-945" secondAttribute="leading" id="XYp-vR-kqZ"/>
+                            <constraint firstItem="Jij-uh-945" firstAttribute="trailing" secondItem="HVt-gh-Xnu" secondAttribute="trailing" id="af3-8o-2Xy"/>
+                            <constraint firstItem="iRu-y0-NKA" firstAttribute="top" secondItem="Jij-uh-945" secondAttribute="top" constant="15" id="uG9-yx-OMb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchResultTableView" destination="HVt-gh-Xnu" id="7sd-gH-vMN"/>
+                        <outlet property="searchTextField" destination="zrr-Rj-ZR7" id="dqe-ke-rSq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYx-HZ-6g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1010.144927536232" y="1377.4553571428571"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WZD-gJ-BvJ">
             <objects>
@@ -119,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="arrow.left.arrow.right" catalog="system" width="119" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>

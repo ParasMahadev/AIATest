@@ -10,6 +10,7 @@ import UIKit
 enum CellIdentifieres: String {
     case IntradayHeaderTableViewCell = "IntradayHeaderTableViewCell"
     case IntradayTableViewCell = "IntradayTableViewCell"
+    case SearchSymbolTableViewCell = "SearchSymbolTableViewCell"
 }
 
 class ViewController: UIViewController {
@@ -29,17 +30,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.symbolTextField.delegate = self
         configTableView()
+        self.fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+      
+    }
+    
+    func fetchData(){
         var symbol = "IBM"
         if let text = self.symbolTextField.text, text != ""{
             symbol = text
         }
-        self.viewModel.getDataIntradayData(timeInterval: .fifteenMin, symbol: symbol) { data in
+        self.viewModel.getIntradayData(timeInterval: .fifteenMin, symbol: symbol) { data,errorMessage  in
+            if let error = errorMessage{
+                self.showAlert(title: "Error", message: error)
+                return
+            }
             if let data = data{
                 self.intradayData = data
+                DispatchQueue.main.async {
+                    self.tableView.backgroundView = UIView()
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.intradayData = [IntradayData]()
+                    let noDataView = NoDataView(frame: self.tableView.frame)
+                    noDataView.messageLabel.text = "No result found"
+                    self.tableView.backgroundView = noDataView
+                }
             }
         }
     }
@@ -67,9 +88,7 @@ extension ViewController: UITableViewDataSource{
             cell.details = self.intradayData?[indexPath.row - 1]
             return cell
         }
-        
     }
-    
 }
 
 extension ViewController: IntradayHeaderTableViewCellDelegate{
@@ -77,7 +96,6 @@ extension ViewController: IntradayHeaderTableViewCellDelegate{
         self.intradayData = self.intradayData?.sorted(by: { (element1, element2) in
             return element1.date?.getDate(format: "yyyy-MM-dd HH:mm:ss") ?? Date() > element2.date?.getDate(format: "yyyy-MM-dd HH:mm:ss") ?? Date()
         })
-        self.tableView.reloadData()
     }
     
     func openButtonAction() {
@@ -86,7 +104,6 @@ extension ViewController: IntradayHeaderTableViewCellDelegate{
             let secondValue: Double = Double(element2.the1Open ?? "") ?? 0.0
             return firstValue > secondValue
         })
-        self.tableView.reloadData()
     }
     func highButtonAction() {
         self.intradayData = self.intradayData?.sorted(by: { (element1, element2) in
@@ -94,7 +111,6 @@ extension ViewController: IntradayHeaderTableViewCellDelegate{
             let secondValue: Double = Double(element2.the2High ?? "") ?? 0.0
             return firstValue > secondValue
         })
-        self.tableView.reloadData()
     }
     
     func lowButtonAction() {
@@ -103,9 +119,26 @@ extension ViewController: IntradayHeaderTableViewCellDelegate{
             let secondValue: Double = Double(element2.the3Low ?? "") ?? 0.0
             return firstValue > secondValue
         })
-        self.tableView.reloadData()
+    }
+}
+
+
+extension ViewController: UITextFieldDelegate, SearchViewControllerDelegate{
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        let searchVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        searchVC.delegate = self
+        self.present(searchVC, animated: true) {
+            searchVC.searchTextField.becomeFirstResponder()
+        }
+        return false
     }
     
-    
+    func selectedSymbol(symbol: SymbolDetails) {
+        if let sym = symbol.symbol{
+            self.symbolTextField.text = sym
+            self.fetchData()
+        }
+    }
 }
 

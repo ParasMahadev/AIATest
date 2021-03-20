@@ -9,17 +9,98 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="7Bk-uP-pCN">
             <objects>
-                <viewController id="eaW-Le-DwY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" id="eaW-Le-DwY" customClass="SettingViewController" customModule="AIATest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcd-7a-evN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vVG-y7-dNI">
+                                <rect key="frame" x="15" y="79" width="384" height="267.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Uay-I3-O4t">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="72.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Key:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-Uw-Xoz">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pd-5q-3Zr">
+                                                <rect key="frame" x="0.0" y="27.5" width="384" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="NzF-5s-vdr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="alphabet" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dzU-Qn-8nL">
+                                        <rect key="frame" x="0.0" y="97.5" width="384" height="72.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKD-1e-PPH">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-qN-5ar">
+                                                <rect key="frame" x="0.0" y="27.5" width="384" height="46"/>
+                                                <segments>
+                                                    <segment title="Compact"/>
+                                                    <segment title="Full"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segementControllerAction:" destination="eaW-Le-DwY" eventType="valueChanged" id="y5r-Py-NX8"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="okl-D9-diQ">
+                                        <rect key="frame" x="0.0" y="195" width="384" height="72.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TR-UF-XnW">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sBE-TY-US3">
+                                                <rect key="frame" x="0.0" y="27.5" width="384" height="46"/>
+                                                <segments>
+                                                    <segment title="1 min"/>
+                                                    <segment title="5 min"/>
+                                                    <segment title="15 min"/>
+                                                    <segment title="30 min"/>
+                                                    <segment title="60 min"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segementControllerAction:" destination="eaW-Le-DwY" eventType="valueChanged" id="7UP-qv-g5C"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xoK-OG-tWG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xoK-OG-tWG" firstAttribute="trailing" secondItem="vVG-y7-dNI" secondAttribute="trailing" constant="15" id="HUD-h9-K3b"/>
+                            <constraint firstItem="vVG-y7-dNI" firstAttribute="top" secondItem="xoK-OG-tWG" secondAttribute="top" constant="35" id="Tu2-TD-kRx"/>
+                            <constraint firstItem="vVG-y7-dNI" firstAttribute="leading" secondItem="xoK-OG-tWG" secondAttribute="leading" constant="15" id="yIo-hU-fB0"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="gearshape" catalog="system" id="kzM-dc-OL4"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="kzM-dc-OL4"/>
+                    <connections>
+                        <outlet property="apiKeyTextField" destination="4pd-5q-3Zr" id="EpR-J8-V1y"/>
+                        <outlet property="outputSizeSegment" destination="mcG-qN-5ar" id="RGT-RD-GpF"/>
+                        <outlet property="timeIntervalSegment" destination="sBE-TY-US3" id="3qc-1f-25W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n11-dd-Dlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

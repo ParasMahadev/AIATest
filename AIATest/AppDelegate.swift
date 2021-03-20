@@ -13,7 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Config Settings
+        if Constants.shared.getStringFromUserDefaults(key: .intarval) == ""{
+            Constants.shared.setStringToUserDefaults(key: .intarval, value: TimeIntervals.fifteenMin.rawValue)
+        }
+        if Constants.shared.getStringFromUserDefaults(key: .outputsize) == ""{
+            Constants.shared.setStringToUserDefaults(key: .outputsize, value: Outputsize.full.rawValue)
+        }
+        //Store KeyChain
+        if Constants.shared.getStringFromKeyChain(key: "APIKey") == ""{
+            Constants.shared.storeStringToKeyChain(key: "APIKey", value: "LC0HKG8WYC7FPSYY")
+        }
         return true
     }
 

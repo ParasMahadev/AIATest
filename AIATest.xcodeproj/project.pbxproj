@@ -14,6 +14,10 @@
 		310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA6852603D50A0083A833 /* Date+Extension.swift */; };
 		310EA68C2603D81E0083A833 /* IntradayHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310EA68A2603D81E0083A833 /* IntradayHeaderTableViewCell.swift */; };
 		310EA68D2603D81E0083A833 /* IntradayHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */; };
+		314CE403260648A800E795E1 /* Contstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE402260648A800E795E1 /* Contstants.swift */; };
+		314CE4082606533500E795E1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE4072606533500E795E1 /* SettingViewController.swift */; };
+		314CE40D26065C3000E795E1 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE40C26065C3000E795E1 /* SettingViewModel.swift */; };
+		314CE412260661CE00E795E1 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE411260661CE00E795E1 /* KeyChain.swift */; };
 		316F3A4A260500D600043BB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A48260500D600043BB4 /* SearchViewController.swift */; };
 		316F3A53260504CE00043BB4 /* SymbolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A52260504CE00043BB4 /* SymbolData.swift */; };
 		316F3A582605071400043BB4 /* SearchSymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */; };
@@ -58,6 +62,10 @@
 		310EA6852603D50A0083A833 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		310EA68A2603D81E0083A833 /* IntradayHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntradayHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		314CE402260648A800E795E1 /* Contstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contstants.swift; sourceTree = "<group>"; };
+		314CE4072606533500E795E1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		314CE40C26065C3000E795E1 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		314CE411260661CE00E795E1 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		316F3A48260500D600043BB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		316F3A52260504CE00043BB4 /* SymbolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolData.swift; sourceTree = "<group>"; };
 		316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSymbolViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 			children = (
 				31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */,
 				316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */,
+				314CE40C26065C3000E795E1 /* SettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,6 +228,8 @@
 				310EA6802603D4F70083A833 /* String+Extensions.swift */,
 				310EA6852603D50A0083A833 /* Date+Extension.swift */,
 				316F3A662605146400043BB4 /* ViewController+Extension.swift */,
+				314CE402260648A800E795E1 /* Contstants.swift */,
+				314CE411260661CE00E795E1 /* KeyChain.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 			children = (
 				31A1A7B72603A4F40068FDAF /* ViewController.swift */,
 				316F3A48260500D600043BB4 /* SearchViewController.swift */,
+				314CE4072606533500E795E1 /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -365,10 +377,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314CE403260648A800E795E1 /* Contstants.swift in Sources */,
+				314CE40D26065C3000E795E1 /* SettingViewModel.swift in Sources */,
 				31A1A7B82603A4F40068FDAF /* ViewController.swift in Sources */,
 				316F3A4A260500D600043BB4 /* SearchViewController.swift in Sources */,
 				31A1A7B42603A4F40068FDAF /* AppDelegate.swift in Sources */,
 				316F3A53260504CE00043BB4 /* SymbolData.swift in Sources */,
+				314CE4082606533500E795E1 /* SettingViewController.swift in Sources */,
 				31A1A7F42603B7870068FDAF /* SymbolViewModel.swift in Sources */,
 				316F3A6126050E7000043BB4 /* SearchSymbolTableViewCell.swift in Sources */,
 				31A1A7EC2603A8A50068FDAF /* NetworkService.swift in Sources */,
@@ -379,6 +394,7 @@
 				31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */,
 				310EA6762603BDA30083A833 /* IntradayTableViewCell.swift in Sources */,
 				316F3A6D260515DC00043BB4 /* NoDataView.swift in Sources */,
+				314CE412260661CE00E795E1 /* KeyChain.swift in Sources */,
 				310EA68C2603D81E0083A833 /* IntradayHeaderTableViewCell.swift in Sources */,
 				310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */,
 			);

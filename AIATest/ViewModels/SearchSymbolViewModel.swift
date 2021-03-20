@@ -10,6 +10,7 @@ import Foundation
 class SearchSymbolViewModel: NSObject {
     
     func getSymbolData(keyword: String,completion: @escaping ([SymbolDetails]?, String?) -> Void){
+        
         let paramaters = ["keywords": keyword]
         guard let url = NetworkService.shared.getURL(function: .symbolSearch, parameter: paramaters ) else {return}
         NetworkService.shared.getData(with: url) { Result in

@@ -7,19 +7,6 @@
 
 import Foundation
 
-enum TimeIntervals: String {
-    case oneMin = "1min"
-    case fiveMin = "5min"
-    case fifteenMin = "15min"
-    case thirtyMin = "30Min"
-    case sixtyMin = "60Min"
-}
-
-enum NetworkFunctions: String {
-    case timeSeriesIntraday = "TIME_SERIES_INTRADAY"
-    case symbolSearch = "SYMBOL_SEARCH"
-    case timeSeriesDailyAdjusted = "TIME_SERIES_DAILY_ADJUSTED"
-}
 
 class NetworkService{
     
@@ -31,12 +18,15 @@ class NetworkService{
     
     private let apiKey = "LC0HKG8WYC7FPSY"
     
+    private let timeInterval = Constants.shared.getStringFromUserDefaults(key: .intarval)
+    
+    
     func getURL(function: NetworkFunctions, parameter: [String: Any]) -> URL?{
+    
         var urlString = baseURL + path + "?" + "function=\(function.rawValue)&"
         for (key,value) in parameter {
             urlString = urlString + "\(key)=\(value)&"
         }
-        
         return URL(string: urlString + "apikey=\(self.apiKey)")
     }
     

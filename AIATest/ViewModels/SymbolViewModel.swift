@@ -11,14 +11,18 @@ import Foundation
 class SymbolViewModel: NSObject {
     
     
-    func getIntradayData(timeInterval: TimeIntervals,symbol: String,completion: @escaping (intradayDataList?, String?) -> Void){
+    func getIntradayData(symbol: String,completion: @escaping (intradayDataList?, String?) -> Void){
+        let timeIntervals = Constants.shared.getStringFromUserDefaults(key: .intarval)
+        let outputSize = Constants.shared.getStringFromUserDefaults(key: .outputsize)
+
         let paramaters = ["symbol":symbol,
-                          "interval": timeInterval.rawValue]
+                          "interval": timeIntervals,
+                          "outputsize": outputSize]
         guard let url = NetworkService.shared.getURL(function: .timeSeriesIntraday, parameter: paramaters ) else {return}
         NetworkService.shared.getData(with: url) { Result in
             switch Result{
             case .success(let dic):
-                if let result = self.mapIntradayData(timeIntervalKey: timeInterval, dic: dic), result.count > 0{
+                if let result = self.mapIntradayData(timeIntervalKey: TimeIntervals(rawValue: timeIntervals) ?? .oneMin, dic: dic), result.count > 0{
                     completion(result,nil)
                 }else{
                     if let errorMessage = dic["Error Message"] as? String{

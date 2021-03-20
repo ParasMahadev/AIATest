@@ -7,11 +7,7 @@
 
 import UIKit
 
-enum CellIdentifieres: String {
-    case IntradayHeaderTableViewCell = "IntradayHeaderTableViewCell"
-    case IntradayTableViewCell = "IntradayTableViewCell"
-    case SearchSymbolTableViewCell = "SearchSymbolTableViewCell"
-}
+
 
 class ViewController: UIViewController {
     //MARK: Variables
@@ -32,21 +28,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.symbolTextField.delegate = self
         configTableView()
-        self.fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      
+        self.fetchData()
     }
+    
     
     func fetchData(){
         var symbol = "IBM"
         if let text = self.symbolTextField.text, text != ""{
             symbol = text
         }
-        self.viewModel.getIntradayData(timeInterval: .fifteenMin, symbol: symbol) { data,errorMessage  in
+        self.viewModel.getIntradayData(symbol: symbol) { data,errorMessage  in
             if let error = errorMessage{
-                self.showAlert(title: "Error", message: error)
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Error", message: error)
+                }
                 return
             }
             if let data = data{

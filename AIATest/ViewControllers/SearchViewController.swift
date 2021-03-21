@@ -11,11 +11,17 @@ protocol SearchViewControllerDelegate {
     func selectedSymbol(symbol: SymbolDetails)
 }
 
+protocol ComapreViewControllerDelegate {
+    func selectedSymbol(symbol: SymbolDetails, selectionIndex: Int)
+}
+
 class SearchViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchResultTableView: UITableView!
     //MARK: Variables
+    var selectionIndex: Int?
+    var compareDelegate: ComapreViewControllerDelegate?
     var delegate: SearchViewControllerDelegate?
     var searchArray = [SymbolDetails](){
         didSet{
@@ -54,17 +60,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifieres.SearchSymbolTableViewCell.rawValue, for: indexPath) as! SearchSymbolTableViewCell
-        cell.cellDetails = self.searchArray[indexPath.row]
+        if self.searchArray.count > 0{
+            cell.cellDetails = self.searchArray[indexPath.row]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let symbol = self.searchArray[indexPath.row]
         self.delegate?.selectedSymbol(symbol: symbol)
+        self.compareDelegate?.selectedSymbol(symbol: symbol, selectionIndex: selectionIndex ?? 0)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension SearchViewController: UITextFieldDelegate {
@@ -74,7 +81,7 @@ extension SearchViewController: UITextFieldDelegate {
     }
     
     @objc func textFieldEditing(_ textField: UITextField){
-        if let text = textField.text, text != ""{
+        if let text = textField.text, text != "", text.count > 1{
             self.viewModel.getSymbolData(keyword: text) { searchData,errorMessage  in
                 if let error = errorMessage{
                     self.showAlert(title: "Error", message: error)

@@ -21,6 +21,7 @@ enum CellIdentifieres: String {
     case IntradayHeaderTableViewCell = "IntradayHeaderTableViewCell"
     case IntradayTableViewCell = "IntradayTableViewCell"
     case SearchSymbolTableViewCell = "SearchSymbolTableViewCell"
+    case CompareTableViewCell = "CompareTableViewCell"
 }
 
 enum TimeIntervals: String {
@@ -48,27 +49,20 @@ class Constants{
     }
     
      func getStringFromUserDefaults(key: UserDefaultsKeys) -> String{
-        var string = ""
-        string = UserDefaults.standard.string(forKey: key.rawValue) ?? ""
-        return string
+        return UserDefaults.standard.string(forKey: key.rawValue) ?? ""
     }
     
     
     func storeStringToKeyChain(key: String, value: String){
         let data = value.data(using: .utf8) ?? Data()
-        print("Keychain Data: \(data)")
-        let status = KeyChain.save(key: key, data: data)
-        print("status: ", status)
+        let _ = KeyChain.save(key: key, data: data)
     }
     
     
     func getStringFromKeyChain(key: String) -> String{
         if let receivedData = KeyChain.load(key: key) {
-            let result = String(decoding: receivedData, as: UTF8.self)
-            return result
-            print("result: ", result)
-        }else{
-            return ""
+            return String(decoding: receivedData, as: UTF8.self)
         }
+        return ""
     }
 }

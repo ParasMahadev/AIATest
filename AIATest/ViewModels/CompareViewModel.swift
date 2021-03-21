@@ -1,14 +1,13 @@
 //
-//  SymbolViewModel.swift
+//  CompareViewModel.swift
 //  AIATest
 //
-//  Created by Paras Navadiya on 18/03/21.
+//  Created by Paras Navadiya on 21/03/21.
 //
 
 import Foundation
 
-
-class SymbolViewModel: NSObject {
+class CompareViewModel: NSObject{
     
     func getIntradayData(symbol: String,completion: @escaping (intradayDataList?, String?) -> Void){
         let timeIntervals = Constants.shared.getStringFromUserDefaults(key: .intarval)
@@ -25,6 +24,9 @@ class SymbolViewModel: NSObject {
                     completion(result,nil)
                 }else{
                     if let errorMessage = dic["Error Message"] as? String{
+                        completion(nil, errorMessage)
+                    }
+                    if let errorMessage = dic["Note"] as? String{
                         completion(nil, errorMessage)
                     }else{
                         completion(nil,"Something went wrong")
@@ -49,8 +51,5 @@ class SymbolViewModel: NSObject {
         }
         return result
     }
-    
-    
-    
     
 }

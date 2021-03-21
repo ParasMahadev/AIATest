@@ -18,6 +18,11 @@
 		314CE4082606533500E795E1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE4072606533500E795E1 /* SettingViewController.swift */; };
 		314CE40D26065C3000E795E1 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE40C26065C3000E795E1 /* SettingViewModel.swift */; };
 		314CE412260661CE00E795E1 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE411260661CE00E795E1 /* KeyChain.swift */; };
+		314CE41726067AF200E795E1 /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE41626067AF200E795E1 /* CompareViewController.swift */; };
+		314CE41C260765C100E795E1 /* CompareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE41B260765C100E795E1 /* CompareViewModel.swift */; };
+		314CE421260777AE00E795E1 /* CompareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE420260777AE00E795E1 /* CompareModel.swift */; };
+		314CE427260778D900E795E1 /* CompareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CE425260778D900E795E1 /* CompareTableViewCell.swift */; };
+		314CE428260778D900E795E1 /* CompareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314CE426260778D900E795E1 /* CompareTableViewCell.xib */; };
 		316F3A4A260500D600043BB4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A48260500D600043BB4 /* SearchViewController.swift */; };
 		316F3A53260504CE00043BB4 /* SymbolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A52260504CE00043BB4 /* SymbolData.swift */; };
 		316F3A582605071400043BB4 /* SearchSymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */; };
@@ -66,6 +71,11 @@
 		314CE4072606533500E795E1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		314CE40C26065C3000E795E1 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		314CE411260661CE00E795E1 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		314CE41626067AF200E795E1 /* CompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewController.swift; sourceTree = "<group>"; };
+		314CE41B260765C100E795E1 /* CompareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareViewModel.swift; sourceTree = "<group>"; };
+		314CE420260777AE00E795E1 /* CompareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareModel.swift; sourceTree = "<group>"; };
+		314CE425260778D900E795E1 /* CompareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareTableViewCell.swift; sourceTree = "<group>"; };
+		314CE426260778D900E795E1 /* CompareTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompareTableViewCell.xib; sourceTree = "<group>"; };
 		316F3A48260500D600043BB4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		316F3A52260504CE00043BB4 /* SymbolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolData.swift; sourceTree = "<group>"; };
 		316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSymbolViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +135,8 @@
 				310EA68B2603D81E0083A833 /* IntradayHeaderTableViewCell.xib */,
 				316F3A5F26050E7000043BB4 /* SearchSymbolTableViewCell.swift */,
 				316F3A6026050E7000043BB4 /* SearchSymbolTableViewCell.xib */,
+				314CE425260778D900E795E1 /* CompareTableViewCell.swift */,
+				314CE426260778D900E795E1 /* CompareTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -198,6 +210,7 @@
 			children = (
 				310EA67B2603BFDC0083A833 /* IntradayData.swift */,
 				316F3A52260504CE00043BB4 /* SymbolData.swift */,
+				314CE420260777AE00E795E1 /* CompareModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 				31A1A7F32603B7870068FDAF /* SymbolViewModel.swift */,
 				316F3A572605071400043BB4 /* SearchSymbolViewModel.swift */,
 				314CE40C26065C3000E795E1 /* SettingViewModel.swift */,
+				314CE41B260765C100E795E1 /* CompareViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -240,6 +254,7 @@
 				31A1A7B72603A4F40068FDAF /* ViewController.swift */,
 				316F3A48260500D600043BB4 /* SearchViewController.swift */,
 				314CE4072606533500E795E1 /* SettingViewController.swift */,
+				314CE41626067AF200E795E1 /* CompareViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -349,6 +364,7 @@
 			files = (
 				31A1A7C02603A4F60068FDAF /* LaunchScreen.storyboard in Resources */,
 				316F3A6226050E7000043BB4 /* SearchSymbolTableViewCell.xib in Resources */,
+				314CE428260778D900E795E1 /* CompareTableViewCell.xib in Resources */,
 				310EA68D2603D81E0083A833 /* IntradayHeaderTableViewCell.xib in Resources */,
 				310EA6772603BDA30083A833 /* IntradayTableViewCell.xib in Resources */,
 				31A1A7BD2603A4F60068FDAF /* Assets.xcassets in Resources */,
@@ -386,17 +402,21 @@
 				314CE4082606533500E795E1 /* SettingViewController.swift in Sources */,
 				31A1A7F42603B7870068FDAF /* SymbolViewModel.swift in Sources */,
 				316F3A6126050E7000043BB4 /* SearchSymbolTableViewCell.swift in Sources */,
+				314CE41726067AF200E795E1 /* CompareViewController.swift in Sources */,
 				31A1A7EC2603A8A50068FDAF /* NetworkService.swift in Sources */,
 				310EA6812603D4F70083A833 /* String+Extensions.swift in Sources */,
 				316F3A672605146400043BB4 /* ViewController+Extension.swift in Sources */,
 				316F3A582605071400043BB4 /* SearchSymbolViewModel.swift in Sources */,
+				314CE41C260765C100E795E1 /* CompareViewModel.swift in Sources */,
 				310EA67C2603BFDC0083A833 /* IntradayData.swift in Sources */,
 				31A1A7B62603A4F40068FDAF /* SceneDelegate.swift in Sources */,
 				310EA6762603BDA30083A833 /* IntradayTableViewCell.swift in Sources */,
+				314CE421260777AE00E795E1 /* CompareModel.swift in Sources */,
 				316F3A6D260515DC00043BB4 /* NoDataView.swift in Sources */,
 				314CE412260661CE00E795E1 /* KeyChain.swift in Sources */,
 				310EA68C2603D81E0083A833 /* IntradayHeaderTableViewCell.swift in Sources */,
 				310EA6862603D50A0083A833 /* Date+Extension.swift in Sources */,
+				314CE427260778D900E795E1 /* CompareTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

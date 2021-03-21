@@ -14,9 +14,15 @@ class CompareViewController: UIViewController {
     var tableArray = [CompareModel](){
         didSet{
             if tableArray.count > 0{
-                print("MY DATA: \(self.tableArray[0])")
                 DispatchQueue.main.async {
+                    self.tableView.backgroundView = UIView()
                     self.tableView.reloadData()
+                }
+            }else{
+                DispatchQueue.main.async {
+                    let noDataView = NoDataView(frame: self.tableView.frame)
+                    noDataView.messageLabel.text = "No result found"
+                    self.tableView.backgroundView = noDataView
                 }
             }
         }
@@ -238,7 +244,6 @@ extension CompareViewController: ComapreViewControllerDelegate{
                 guard let data = list else {return}
                 self.symbol1Details = data
                 self.configureTableArray()
-                print("TableArray: \(self.tableArray.count)")
             }
         case 2:
             self.symbol2Title.text = symbol.symbol
@@ -246,7 +251,6 @@ extension CompareViewController: ComapreViewControllerDelegate{
                 guard let data = list else {return}
                 self.symbol2Details = data
                 self.configureTableArray()
-                print("TableArray: \(self.tableArray.count)")
             }
         case 3:
             self.symbol3Title.text = symbol.symbol
@@ -254,7 +258,6 @@ extension CompareViewController: ComapreViewControllerDelegate{
                 guard let data = list else {return}
                 self.symbol3Details = data
                 self.configureTableArray()
-                print("TableArray: \(self.tableArray.count)")
             }
         default:
             break

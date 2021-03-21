@@ -18,6 +18,9 @@ class SettingViewController: UIViewController {
     var viewModel = SettingViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], for: .normal)
+
 
         // Do any additional setup after loading the view.
     }

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var symbolTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    //MARK: View Controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.symbolTextField.delegate = self
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         self.fetchData()
     }
     
-    
+    //Fetch data
     func fetchData(){
         var symbol = "IBM"
         if let text = self.symbolTextField.text, text != ""{

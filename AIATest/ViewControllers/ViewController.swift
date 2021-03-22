@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     //Fetch data
     func fetchData(){
-        var symbol = "IBM"
+        var symbol = "AIA"
         if let text = self.symbolTextField.text, text != ""{
             symbol = text
         }

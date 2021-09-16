@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        // Mahesh changes
+        // line 1
+        // line 3
+        // line 5
+        // line 7
+        
         //Config Settings
         if Constants.shared.getStringFromUserDefaults(key: .intarval) == ""{
             Constants.shared.setStringToUserDefaults(key: .intarval, value: TimeIntervals.fifteenMin.rawValue)
